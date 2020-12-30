@@ -3,72 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ludo-game-for-my-javascript-program</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="main">
-        <h2>INCREASE YOUR MATH CALCULATION</h2>
-        <div class="main-box">
-              <div class="box-one">
-            <div class="first">
-                <input type="text" id="n1">
-
-            </div>
-            <div class="center">
-                <p>+</p>
-
-            </div>
-
-            <div class="secound">
-                <input type="text" id="n2">
-
-            </div>
-              </div>
-        <div class="box-two">
-             <div class="center-box">
-                 <input type="text" id="answ">
-             </div>
-             <div class="sentbox">
-                 <button onclick="jsGame()">cheak answer</button>
-             </div>
-
-
-      </div>
+<div class="contanier">
+    <h1>King Of Ludo</h1>
+    <div class="dice">
+        <p>Player 1</p>
+     <img src="images/dice3.png" id="cheak1" width="200px" height="200px">
     </div>
+    <div class="dice">
+        <p>Player 2</p>
+        <img src="images/dice2.png" id="cheak2" width="200px" height="200px">
     </div>
-    <script>
-        let v1 = Math.floor(Math.random()*10+1);
-        let v2 = Math.floor(Math.random()*10+1);
+<div class="btn">
+    <button onclick="myludo(event)">CLICK</button>
+</div>
+</div>
+<script>
+    function myludo(e){
+    e.preventDefault();
+    const play1 = Math.floor(Math.random()* 6) + 1;
+    const play1dice = `images/dice${play1}.png`;
+    document.getElementById('cheak1').setAttribute('src', play1dice);
 
-        document.getElementById('n1').value = v1;
-        document.getElementById('n2').value = v2;
+    const play2 = Math.floor(Math.random()* 6) + 1;
+    const play2dice = `images/dice${play2}.png`;
+    document.getElementById('cheak2').setAttribute('src', play2dice);
 
-        let ans = v1 + v2;
+if(play1 > play2)
+{
+    document.querySelector('h1').innerHTML="player1 won :)";
 
-        const jsGame = () => {
-            var usera = document.getElementById('answ').value;
+}
+else if(play1 < play2)
+{
+    document.querySelector('h1').innerHTML="player2 won :)";
+}
 
-            if(usera == ans){
-                alert('well done your answer is correct.');
-            }else{
-                alert('answer is not correct try angin');
-            }
-
-       document.getElementById('answ').value = "";
-         v1 = Math.floor(Math.random()*10+1);
-         v2 = Math.floor(Math.random()*10+1);
-
-        document.getElementById('n1').value = v1;
-        document.getElementById('n2').value = v2;
-         
-         ans = v1 + v2;
-         
-        }
-
-        
+else
+{
+    document.querySelector('h1').innerHTML="DRAW :)";
+}
+    }
 
 
-    </script>
+</script>
 </body>
 </html>

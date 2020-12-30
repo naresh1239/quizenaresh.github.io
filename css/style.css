@@ -1,0 +1,48 @@
+@font-face{
+    font-family: naresh;
+    src: url('../font/jf.ttf');
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: naresh;
+}
+body{
+    background-color: #0a3d62;
+}
+
+.contanier{
+    width: 70%;
+    margin:90px auto;
+    text-align: center
+}
+.dice{
+    display: inline-block;
+    text-align: center;
+    display: inline-block;
+    padding: 20px 0;
+    
+}
+img{
+    padding: 20px 20px;
+}
+h1{
+    text-shadow: 5px 1px white;
+    font-size: 4rem;
+    color: #f6b93b;
+}
+p{
+    font-size: 2rem;
+    color: #00b894;
+    text-shadow: 1px 1px white;
+}
+button{
+    color: white;
+    background-color: #00b894;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+}
